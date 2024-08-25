@@ -20,3 +20,9 @@ steps:
   inputs:
     command: 'build'
     projects: '$(solution)'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'my-public-docker-hub'
+    repository: 'sample'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
