@@ -18,6 +18,7 @@ variables:
 steps:
 - task: DotNetCoreCLI@2
   displayName: Build
+  enabled: false
   inputs:
     command: 'build'
     projects: '$(solution)'
@@ -26,4 +27,4 @@ steps:
     containerRegistry: 'my-public-docker-hub'
     repository: 'sample'
     command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: 'samples/complexapp/Dockerfile'
